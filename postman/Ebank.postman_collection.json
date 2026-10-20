@@ -1,0 +1,125 @@
+{
+  "info": {
+    "name": "E-Bank Microservices",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Via Gateway (9999)",
+      "item": [
+        {
+          "name": "GET customers",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:9999/customers"
+            }
+          }
+        },
+        {
+          "name": "GET customer by id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:9999/customers/1"
+            }
+          }
+        },
+        {
+          "name": "POST customer",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:9999/customers"
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Aya\",\n  \"email\": \"aya@gmail.com\"\n}"
+            }
+          }
+        },
+        {
+          "name": "GET accounts",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:9999/accounts"
+            }
+          }
+        },
+        {
+          "name": "GET accounts of customer 1",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:9999/accounts/customer/1"
+            }
+          }
+        },
+        {
+          "name": "POST account",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:9999/accounts"
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"type\": \"SAVING-ACCOUNT\",\n  \"balance\": 5000,\n  \"customerId\": 1\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Chatbot (8090)",
+      "item": [
+        {
+          "name": "GET chat",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8090/chat?question=Liste des clients"
+            }
+          }
+        },
+        {
+          "name": "POST chat",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8090/chat"
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"question\": \"Quels sont les comptes du client 1 ?\",\n  \"conversationId\": \"postman-1\"\n}"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
