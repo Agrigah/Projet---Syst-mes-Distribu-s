@@ -46,10 +46,3 @@ Double-clic sur `start-all.bat` (Windows), ou manuellement, **dans cet ordre** :
    activer **MESSAGE CONTENT INTENT** → copier le token → `setx DISCORD_BOT_TOKEN "..."` →
    inviter le bot (OAuth2 → URL Generator : scope `bot`, permissions *Send Messages* + *Read Messages*) → relancer ai-agent.
 
-## Ce qui a été corrigé / ajouté par rapport à ta version
-- `/cusomers` → `/customers` (faute de frappe)
-- `eureka.client.register-with-eureka` (le nom de la propriété était faux)
-- `@GeneratedValue(strategy = UUID)` sur BankAccount
-- OpenFeign + Resilience4J dans ebank-service, endpoint `GET /accounts/customer/{id}`
-- Gateway : routes `lb://CUSTOMER-SERVICE` et `lb://EBANK-SERVICE`
-- Nouveaux modules `mcp-server` et `ai-agent`
